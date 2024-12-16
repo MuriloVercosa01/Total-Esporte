@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="PT-Br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="Estilos/Pagamento.css">
+</head>
+<body>
+
+    
+    <div class="container-pagamento">
+        <form action="">
+            <!-- Linha principal que divide o formulário em duas colunas -->
+            <div class="linha">
+                <!-- Primeira coluna: Endereço de Cobrança -->
+                <div class="coluna">
+                    <h3 class="titulo">Endereço de Cobrança</h3>
+                    <!-- Campo: Nome completo -->
+                    <div class="caixa-de-entrada">
+                        <samp>Nome Completo</samp>
+                        <input type="text" placeholder="João Silva">
+                    </div>
+                    <!-- Campo: E-mail -->
+                    <div class="caixa-de-entrada">
+                        <samp>E-mail</samp>
+                        <input type="email" placeholder="exemplo@gmail.com">
+                    </div>
+                    <!-- Campo: Endereço -->
+                    <div class="caixa-de-entrada">
+                        <samp>Endereço</samp>
+                        <input type="text" placeholder="Rua, Bairro, Localidade">
+                    </div>
+                    <!-- Campo: Cidade -->
+                    <div class="caixa-de-entrada">
+                        <samp>Cidade</samp>
+                        <input type="text" placeholder="São Paulo">
+                    </div>
+    
+                    <!-- Campos flexíveis: Estado e CEP -->
+                    <div class="flexivel">
+                        <div class="caixa-de-entrada">
+                            <samp>Estado</samp>
+                            <input type="text" placeholder="SP">
+                        </div>
+    
+                        <div class="caixa-de-entrada">
+                            <samp>CEP</samp>
+                            <input type="number" placeholder="12345-678">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Segunda coluna: Informações de Pagamento -->
+                <div class="coluna">
+                    <h3 class="titulo">Pagamento</h3>
+                    <!-- Imagem de cartões aceitos -->
+                    <div class="caixa-de-entrada">
+                        <samp>Cartões Aceitos</samp>
+                        <img src="imagens/imgcards.png" alt="Cartões Aceitos">
+                    </div>
+                    <!-- Campo: Nome no cartão -->
+                    <div class="caixa-de-entrada">
+                        <samp>Nome no Cartão</samp>
+                        <input type="text" placeholder="Sr. João Silva">
+                    </div>
+                    <!-- Campo: Número do cartão -->
+                    <div class="caixa-de-entrada">
+                        <samp>Número do Cartão</samp>
+                        <input type="number" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <!-- Campo: Mês de Expiração -->
+                    <div class="caixa-de-entrada">
+                        <samp>Mês de Expiração</samp>
+                        <input type="text" placeholder="Julho">
+                    </div>
+    
+                    <!-- Campos flexíveis: Ano de Expiração e CVV -->
+                    <div class="flexivel">
+                        <div class="caixa-de-entrada">
+                            <samp>Ano de Expiração</samp>
+                            <input type="number" placeholder="2025">
+                        </div>
+    
+                        <div class="caixa-de-entrada">
+                            <samp>CVV</samp>
+                            <input type="number" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Botão de submissão -->
+            <button type="submit" class="botao">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <!-- Container principal -->
+    <div id="conteudo-rodape">
+    <!-- Contatos e redes sociais -->
+        <div id="contatos-rodape">
+            <img src="imagens/Logo.png" alt="Logo Total Esporte">
+            <p>Nossas redes sociais</p>
+            <div id="redes-sociais-rodape">
+            <a href="#" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            </a>
+      </div>
+    </div>
+
+    <!-- Listas de serviços e produtos -->
+    <ul class="lista-rodape">
+      <li><h3>Serviços</h3></li>
+      <li><p>Entrega grátis a partir de R$ 200,00</p></li>
+      <li><p>30 dias para trocas e devoluções</p></li>
+      <li><p>Atendimento online 24 horas</p></li>
+    </ul>
+    <ul class="lista-rodape">
+      <li><h3>Produtos</h3></li>
+      <li><p>Chuteira Futsal</p></li>
+      <li><p>Chuteira Society</p></li>
+      <li><p>Chuteira Campo</p></li>
+    </ul>
+
+    <!-- Suporte online -->
+    <div id="suporte-rodape">
+      <h3>Suporte Online</h3>
+      <p>
+        A Total Esporte oferece suporte online pelo e-mail suporte@totalesporte.com.
+        Nossa equipe está pronta para ajudá-lo!
+      </p>
+      <div id="email-suporte">
+        <a>
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+        <h1>suporte@totalesporte.com</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Direitos autorais -->
+  <div id="direitos-autorais-rodape">
+    &#169; 2024 Total Esporte
+  </div>
+    </footer>
+    
+ 
+
+
+
+    
+</body>
+</html>
