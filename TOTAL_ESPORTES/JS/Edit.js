@@ -2,13 +2,22 @@
 
 // função para que ao clicar em edit o texto se torne um input na página: "painelDeProdutos.php"
 
-    function EditText(button){
+     async function EditText(button){
 
         const tr = button.closest('tr');
         const td = tr.querySelector("td:nth-child(2)");
         const p = td.querySelector('.edit_text');
+        const id = tr.querySelector('td').innerText;
 
         if (button.innerText === "Editar"){
+            
+            if ( tr.classList.contains('produto') ){
+                function redirecionar(url) {
+                    window.location.href = url;
+                }
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/addprodutos.php?id=" + id);
+                console.log("redirecionou");
+            }
 
             const input = document.createElement('input');
             input.value = p.innerText;
@@ -27,38 +36,35 @@
             button.innerText = "Editar"
 
             const categoria = novop.innerText;
-            const id = tr.querySelector('td').innerText;
 
-            const requi = tr.classList.contains('subcategoria') //verifica se é categoria ou subcategoria
-                ? `subcategoria=${encodeURIComponent(categoria)}&id_subcategoria=${encodeURIComponent(id)}`
-                : `categoria=${encodeURIComponent(categoria)}&id_categoria=${encodeURIComponent(tr.querySelector('td').innerText)}`;
+                let requi;
+                if (tr.classList.contains('categoria')) {
+                    requi = `categoria=${encodeURIComponent(categoria)}&id_categoria=${encodeURIComponent(id)}`;
+                } else if (tr.classList.contains('subcategoria')) {
+                    requi = `subcategoria=${encodeURIComponent(categoria)}&id_subcategoria=${encodeURIComponent(id)}`;
+                } else {
+                    throw new Error('Condição desconhecida');
+                }
 
-                fetch('Conexao/salvarEdit.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: requi
-                })
-                .then(response => {
-                    return response.text(); // Lê a resposta como texto
-                })
-                .then(data => {
-                    console.log(data); // Exibe a resposta para depuração
-                    try {
-                        const parsedData = JSON.parse(data); // Tenta converter em JSON
-                        if (parsedData.success) {
-                            console.log("Texto salvo com sucesso!");
-                            location.reload();
-                        } else {
-                            console.error("Erro ao salvar texto:", parsedData.message);
-                        }
-                    } catch (error) {
-                        console.error("Erro ao parsear o JSON:", error);
-                        console.log("Resposta do servidor:", data);
+                try{
+                    const response = await                 fetch('Conexao/salvarEdit.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: requi
+                    });
+                    const data = await response.json();
+
+                    if( data.success){
+                        console.log("texto editado e salvo com sucesso");
+                    }else{
+                        console.error('Erro para salvar edicao:' , data.message);
                     }
-                })
-                .catch(error => console.error('Erro de rede:', error));                   
+                    
+                } catch(error){
+                    console.erro('erro ao salvar edição:', error);
+                }
             }
             
          

@@ -97,7 +97,7 @@
                         if ($result->num_rows > 0){
                         //caso haja resultados
                             while($row = $result->fetch_assoc()){
-                                echo "<tr>";
+                                echo "<tr class='categoria' >";
 
                                 echo "<td><p>" . $row['id_categoria'] . "</p></td><td><p class='edit_text' >" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
@@ -158,8 +158,8 @@
                         <tr>
                             <th>id</th>
                             <th>Modelo</th>
-                            <th>Categoria</th>
                             <th>subcategoria</th>
+                            <th>Categoria</th>
                             <th>Editar</th>
                             <th>Deletar</th>
                         </tr>
@@ -180,9 +180,9 @@
                         if ($result->num_rows > 0){
                         //caso haja resultados
                             while($row = $result->fetch_assoc()){
-                                echo "<tr>";
+                                echo "<tr class='produto' >";
 
-                                echo "<td>" . $row['id_produto'] . "</td><td>" . $row['nome_categoria'] . "</td><td>" . $row['s_categoria'] . "</td><td>" . $row['modelo'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td>" . $row['id_produto'] . "</td><td><p class='edit_text' >" . $row['modelo'] . "</p></td><td>" . $row['s_categoria'] . "</td><td>" . $row['nome_categoria'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }
