@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+/* minha parte de edição começa aqui*/
+/* styles.css */
+ 
+/* styles.css */
+main{
+    background: white;
+}
+
+.container-main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+.button-container {
+    display: flex; /* Usando Flexbox para organizar os botões */
+            justify-content: center;
+            gap: 10px; /* Espaçamento entre os botões */
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    background-color: rgb(255, 128, 0);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 75px;    
+}
+button:hover{
+    background-color: #ff2500;
+}
+
+.quantity {
+    width: 40px; /* Define a largura do input como 50px */
+    height: 27px;
+    text-align: center;
+    border: 2px solid #007bff; /* Adiciona uma borda de 2px de espessura, com cor azul */
+    border-radius: 4px; /* Arredonda os cantos da borda */
+    padding: 5px; /* Espaço interno dentro do input */
+
+}
+
+.checkout-button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+
+.checkout-button {
+    text-align: center; /* Centraliza elementos dentro do contêiner */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.checkout-button {
+    margin: 0 auto; /* Centraliza a tabela horizontalmente */
+    width: 15%; /* Ajuste conforme necessário */
+    border-collapse: collapse;
+}
+
+.checkout-button {
+    margin-top: 20px; /* Espaço entre a tabela e o botão */
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;}
+/* Estiliza o contêiner do item */
+.item-container {
+    display: flex;
+    flex-direction: column; /* Imagem acima do texto */
+    align-items: center; /* Centraliza o conteúdo */
+}
+
+/* Estiliza a imagem */
+.item-image {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-bottom: 5px; /* Espaço entre imagem e texto */
+}
+
+/* Estiliza o texto */
+.item-container p {
+    margin: 0;
+    font-size: 14px; /* Ajuste o tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+}

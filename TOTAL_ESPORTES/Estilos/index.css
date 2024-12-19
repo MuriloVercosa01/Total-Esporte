@@ -1,0 +1,125 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* Estilizacao Carrosel Rolagem de Chuteira */
+
+.texto1 h1{
+    font-size: 20px;
+    padding-left: 10px;
+    color: #333; 
+    font-weight: bold;
+
+}
+
+
+.carrosel-rolagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .conteiner-rolagem {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 30px;
+    max-width: 1000px;
+  }
+  
+  .item {
+    flex: 0 0 auto;
+    width: 150px;
+    margin-right: 110px;
+    display: flex;
+    flex-direction: column; /* Organiza imagem e texto verticalmente */
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border: none;
+    text-align: center; 
+  }
+  
+  .item img {
+    width: 100%;
+    max-width: 150px;
+    
+  }
+  
+  .item p {
+    margin: 0; 
+    padding: 0; 
+    font-size: 14px;
+    color: #333; 
+    font-weight: bold;
+    text-align: center; 
+  }
+  
+/* FIM Estilizacao Carrosel Rolagem de Chuteira */
+
+
+
+
+.tabela-produtos {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Faz o div ocupar toda a altura da tela */
+    margin: 0;
+  }
+  
+  
+  .tabela-produtos table {
+    border-collapse: collapse; /* Remove o espaçamento entre células */
+  }
+  
+  .tabela-produtos table td {
+    padding: 10px; 
+  }
+  
+  .tabela-produtos table td img {
+    max-width: 100%; 
+    height: auto; 
+  }
+
+
+
+
+
+.fornecedores {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+  }
+  
+  /* Estilizar a tabela */
+  .fornecedores table {
+    border-collapse: collapse; /* Remove o espaço extra entre células */
+    margin: 0 auto; 
+  }
+  
+ 
+  .fornecedores table td {
+    padding: 60px; 
+    text-align: center; 
+  }
+  
+  
+  .fornecedores table td img {
+    max-width: 120px;
+    height: auto; 
+    opacity: 0.4;
+  }
+
+
+
+/* Estilos gerais */

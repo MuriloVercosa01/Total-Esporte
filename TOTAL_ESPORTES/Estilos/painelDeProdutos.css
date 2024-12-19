@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+/* a partir daqui formatação da página em específico*/
+
+main{
+   width: 100%;
+   margin-top: 20px;
+
+}
+main h1{
+   font-size: 30px;
+   margin-left: 100px;
+}
+.adicionar{
+   margin-top: 10px;
+   margin-left: 130px;
+}
+.painel{
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-50% , -50%);
+   background-color: aliceblue;
+   border-radius: 5px;
+   width: 80%;
+   height: 60vh;
+}
+.painel h1{
+   margin-left: 70px;
+   background-color: aliceblue;
+   padding: 10px;
+}
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+table th{
+   border-bottom: 1px solid black;
+}
+table tbody tr:nth-child(odd){
+   background-color: #E6E6FA;
+}
+
+.container-lista table{
+   width: 100%;
+   text-align: center;
+}
+button {
+   padding: 5px 10px;
+   margin: 3px;
+   cursor: pointer;
+   border-radius: 3px;
+}
+.edit-btn {
+   background-color: #4CAF50; /* Verde */
+   color: white;
+   border: none;
+   padding: 10px;
+}
+.edit-btn:hover{
+   background-color: #388E3C;
+   font-style: italic;
+}        
+.delete-btn {
+   background-color: #f44336; /* Vermelho */
+   color: white;
+   border: none;
+   padding: 10px;
+}
+.delete-btn:hover{
+   background-color: #D32F2F;
+   font-style: italic;
+}

@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+/* a partir daqui formatação da página*/
+
+main{
+    width: 100%;
+    height: 120vh;
+    background-color:white;
+    display: flex;
+}
+form{
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid black;
+    border-radius: 15px;
+    position: absolute;
+    padding-bottom: 20px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#titulo{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+}
+#subtitulo{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    font-size: 35px;
+    margin-left: 50px;
+}
+.form{
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0,0.3);
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+.form label{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+form > div:last-of-type{
+    background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+}
+.form button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px;
+}
+.form button:hover{
+    cursor: pointer;
+}
+.input{
+    margin-bottom: 10px;
+}
+.preview{
+    width: 300px;
+    height: 500px;
+    background-color:aliceblue;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    word-wrap:break-word;
+}
+.preview img{
+    width: 300px;
+    height: 300px;
+}
+
+/* formatação do footer*/
