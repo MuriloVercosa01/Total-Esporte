@@ -1,0 +1,131 @@
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "imagem",
+    "Nike Mercurial Vapor",
+    coloque o numero correspondente a categoria,
+    subcategoria,
+    "adicione a descrição breve",
+    adicione o preço aqui
+	);
+---------------------------------------
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023317_vapor.jpg",
+    "Nike Mercurial Vapor",
+    1,
+    3,
+    "Querendo levar sua velocidade para o próximo nível? Criamos a chuteira Academy com uma unidade Air Zoom melhorada no calcanhar. Ela oferece sensação propulsiva necessária para romper a linha de fundo.",
+    499.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019309_puma-future.jpg",
+    "Puma Future",
+    1,
+    1,
+    "Chamando todos os craques. Inspirado no estilo de jogo de Neymar Jr, a nova chuteira FUTURE MATCH chegou para você deixá-los loucos. Possui cabedal FUZIONFIT360 com suporte PWRTAPE que tá da maior estabilidade para cortes rápidos e mudanças de ritmo.",
+    399.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023345_phantom-luna.jpg",
+    "Nike Phantom GX",
+    1,
+    3,
+    "Querendo levar seu jogo para o próximo nível? A Phantom Luna 2 Academy ajuda a colocá-lo em uma posição privilegiada na rede, seja você o organizador, assistente ou finalizador.",
+    359.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018849_f50-120924.jpg",
+    "Adidas F50",
+    1,
+    1,
+    "A F50 está de volta! Mais rápida do que nunca, a Chuteira Campo Adidas F50 Club Unissex traz velocidade para dentro das quatro linhas!",
+    299.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023352_tiempo.jpg",
+    "Nike Tiempo Legend",
+    1,
+    2,
+    "Até mesmo as Lendas descobrem formas de evoluir. Quer esteja começando ou apenas jogando por diversão, a mais recente iteração dos calçados Club colocam você em campo sem comprometer a qualidade.",
+    299.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018874_copa.jpg",
+    "Adidas Copa Pure",
+    1,
+    3,
+    "Para realmente dominar o jogo, é necessário ficar perto dos companheiros de time e mais perto ainda da bola. Com todo o conforto proporcionado pela chuteira adidas Copa Pure II",
+    249.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018813_pred-120924.jpg",
+    "Adidas Predator",
+    1,
+    3,
+    "Nova adidas Predator: pura perfeição. Macio e flexível, o cabedal HybridTouch 2.0 sem cadarços dessa chuteira inclui datalhes de borracha aderente Strikeskin para chutes mais precisos.",
+    599.49
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019327_puma-king.jpg",
+    "Puma King",
+    1,
+    3,
+    "O pai tá on! Inspire-se no craque brasileiro Neymar e tome conta do jogo com a nova Chuteira Campo Puma. ",
+    449.49
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://imgnike-a.akamaihd.net/360x360/0226060UA9.jpg",
+    "Nike Mercurial Superfly",
+    1,
+    2,
+    "Incline instantaneamente o campo no design da Superfly 9 Club MG leve e baixa. A velocidade está no Air.",
+    299.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://acdn.mitiendanube.com/stores/001/047/204/products/006050e2-7374-487f-9618-2602fca8e4191-8a33bd221a5929007516748214399312-1024-1024.jpeg",
+    "Adidas Predator Edge+",
+    1,
+    1,
+    "Domínio. Controle. Forca. A adidas Predator tem tudo para emplacar",
+    649.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://www.tradeinn.com/f/14055/140552258/adidas-tenis-de-futsal-predator-league-in.webp",
+    "Adidas Predator League In",
+    1,
+    2,
+    "Mire na perfeição com a nova adidas Predator. uma entressola Lightstrike leve e uma sola de perfil baixo garantem que você esteja sempre pronto para reagir.",
+    329.99
+	);
+INSERT INTO 
+produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) 
+VALUES (
+    "https://imgcentauro-a.akamaihd.net/768x768/8295512V.jpg",
+    "Nike Beco 2",
+    1,
+    2,
+    "Feita com linhas clean e um visual clássico, a Nike Beco 2 TF permite que a sua jogada fale por si só. ",
+    199.99
+	);
