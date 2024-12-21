@@ -1,5 +1,21 @@
 <?php
   session_start();
+  
+  include("Conexao/conexao.php");
+  if(isset($_GET['id'])){
+
+    $id = $_GET['id'];
+  
+    $sql = 'SELECT * FROM `produto` WHERE id_produto =' . $id. ';';
+  
+    $result = $conexao->query($sql);
+  
+    if($result->num_rows > 0){
+      $produto = $result->fetch_assoc();
+    }else{
+      echo "Nenhum Produto com esse id";
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +27,7 @@
     <link rel="stylesheet" href="Estilos/header.css">
     <script src="JS/index.js" defer></script>
 
-    <title>Adicionar Produtos</title>
+    <title><?php echo isset($id) ? "Editar Produto" : "Adicionar Produto";?></title>
 </head>
 <body>
 <header>
@@ -64,20 +80,24 @@
 
     <main>
         <form class="formulario" method="POST" action="Conexao/cadastrarProdutos.php">
-            <h1 id="titulo">Adicionar Produto</h1>
+            <h1 id="titulo"><?php echo isset($id) ? "Editar Produto" : "Adicionar Produto";?></h1>
             <h2 id="subtitulo" >Preencha o formulário</h2>
             <div  class="form">
                 <label for="img">Imagem do produto (url)</label>
-                <input name="img" type='text' class="input" id="img" oninput="alterarPreview( 'img' , 'preview_img' )" >
+                <input name="img" type='text' class="input" id="img" value="<?php echo isset($id) ? $produto['imagem'] : "";?>"  oninput="alterarPreview( 'img' , 'preview_img' )" >
             </div>
             <div  class="form">
                 <label for="modelo">Modelo do produto</label>
-                <input name="modelo" type='text' class="input" id="modelo" oninput="alterarPreview( 'modelo' , 'preview_modelo' )">
+                <input name="modelo" type='text' class="input" id="modelo"  value="<?php echo isset($id) ? $produto['modelo'] : "";?>" oninput="alterarPreview( 'modelo' , 'preview_modelo' )">
             </div>
             <div  class="form">
                 <label for="categoria">categoria</label>
-                <select name="categoria"  class="input" id="categoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )" >
+                <select name="categoria"  class="input" id="categoria"  oninput="alterarPreview( 'categoria' , 'preview_categoria' )" >
                   <?php
+
+                    if(isset($id)){
+                      echo "<option value='". $produto['id_categoria'] . "' >Categoria Atual</option>";
+                    }
                     include("Conexao/conexao.php");
 
                     $sql = "SELECT * FROM `categoria`;";
@@ -97,8 +117,12 @@
             </div>
             <div  class="form">
               <label for="subcategoria">subcategoria</label>
-              <select name="subcategoria"  class="input" id="subcategoria" oninput="alterarPreview( 'subcategoria' , 'preview_subcategoria' )" >
+              <select name="subcategoria"  class="input" id="subcategoria"  value="<?php echo isset($id) ? $produto['id_subcategoria'] : "";?>" oninput="alterarPreview( 'subcategoria' , 'preview_subcategoria' )" >
               <?php
+                    if(isset($id)){
+                      echo "<option value='". $produto['id_subcategoria'] . "' >Sub categoria Atual</option>";
+                    }
+                    
                     include("Conexao/conexao.php");
 
                     $sql = "SELECT categoria.nome_categoria, sub_categoria.s_categoria, id_sub_categoria  FROM sub_categoria JOIN categoria ON sub_categoria.id_categoria = categoria.id_categoria;";
@@ -118,14 +142,14 @@
           </div>
             <div  class="form">
                 <label for="desc_breve">breve descrição do produto</label>
-                <input name="desc_breve" type='text' class="input" id="desc" oninput="alterarPreview( 'desc' , 'preview_desc' )">
+                <input name="desc_breve" type='text' class="input" id="desc" value="<?php echo isset($id) ? $produto['desc_breve'] : " ";?>" oninput="alterarPreview( 'desc' , 'preview_desc' )">
             </div>
             <div  class="form">
                 <label for="valor">valor do produto</label>
-                <input name="valor" type='text' class="input" id="valor"oninput="alterarPreview( 'valor' , 'preview_valor' )">
+                <input name="valor" type='text' class="input" id="valor" value="<?php echo isset($id) ? $produto['preco'] : " ";?>"  oninput="alterarPreview( 'valor' , 'preview_valor' )">
             </div>
             <div class="form" >
-                <button type="submit" >Adicionar</button>
+                <button type="submit" ><?php echo isset($id) ? "Editar" : "Adicionar";?></button>
             </div>
         </form>
 
@@ -195,5 +219,6 @@
     </footer>
 
     <script src="JS/addprodutos.js" ></script>
+
 </body>
 </html>
