@@ -1,9 +1,10 @@
 <?php
 include('conexao.php');
-var_dump($_POST);
+header('Content-Type: application/json');
 // Verifique se os parâmetros estão presentes no POST
 $id_categoria = isset($_POST['id_categoria']) ? $_POST['id_categoria'] : null;
-$id_subcategoria = isset($_POST['id_subcategoria']) ? $_POST['id_subcategoria'] : null;
+$id_subcategoria = isset($_POST['id_subcategoria']) ? $_POST['id_subcategoria'] : null; 
+$id_produto = isset($_POST['id_produto']) ? $_POST['id_produto'] : null;
 
 // Verifique se o id_categoria foi passado
 if ($id_categoria !== null) {
@@ -120,7 +121,18 @@ elseif ($id_subcategoria !== null) {
         $conexao->rollback();
         echo json_encode(["success" => false, "message" => "Erro ao deletar dados: " . $e->getMessage()]);
     }
-} else {
+} elseif($id_produto !== null) {
+
+    $stmt = $conexao->prepare("DELETE FROM produto WHERE id_produto = ?");
+    $stmt->bind_param("i", $id_produto);
+    $stmt->execute();
+
+    if($stmt->affected_rows > 0){
+        echo json_encode(["success" => true, "message" => "Produto deletado com sucesso"]);
+    }else{
+        echo json_encode(["success" => false, "message" => "Nenhum produto correponde"]);
+    }
+}else {
     echo json_encode(["success" => false, "message" => "Parâmetro inválido"]);
 }
 

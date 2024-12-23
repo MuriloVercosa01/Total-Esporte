@@ -182,7 +182,7 @@
                             while($row = $result->fetch_assoc()){
                                 echo "<tr class='produto' >";
 
-                                echo "<td>" . $row['id_produto'] . "</td><td><p class='edit_text' >" . $row['modelo'] . "</p></td><td>" . $row['s_categoria'] . "</td><td>" . $row['nome_categoria'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td><p>" . $row['id_produto'] . "</p></td><td><p class='edit_text' >" . $row['modelo'] . "</p></td><td>" . $row['s_categoria'] . "</td><td>" . $row['nome_categoria'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }

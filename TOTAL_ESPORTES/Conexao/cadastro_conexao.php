@@ -36,7 +36,7 @@
                 echo ('<script>
                 alert("nome de usuario já cadastrado");
 
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/cadastro.php");
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/cadastro.php");
 
                 function redirecionar(url){
                     window.location.href = url;
@@ -56,7 +56,7 @@
             ('<script>
                 alert("cadastro realizado com sucesso");
 
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/login.php");
 
                 function redirecionar(url){
                     window.location.href = url;
@@ -72,7 +72,7 @@
             ('<script>
                 alert("email já cadastrado ou senha não confere");
 
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/cadastro.php");
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/cadastro.php");
 
                 function redirecionar(url){
                     window.location.href = url;

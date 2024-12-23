@@ -43,7 +43,7 @@
             echo ('<script type="text/javascript" >
                 alert("login realizado com sucesso");
 
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/");
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/");
 
                 function redirecionar(url){
                     window.location.href = url;
@@ -55,7 +55,7 @@
         echo '<script type="text/javascript" >
                 alert("há campos não preenchidos");
 
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.html");
+                redirecionar("http://localhost/Total-Esporte/TOTAL_ESPORTES/login.html");
 
                 function redirecionar(url){
                     window.location.href = url;
