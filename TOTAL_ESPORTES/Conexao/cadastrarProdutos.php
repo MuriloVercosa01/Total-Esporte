@@ -7,7 +7,8 @@
         $_subcategoria = $_POST['subcategoria'];
         $_desc = $_POST['desc_breve'];
         $_valor = $_POST['valor'];
-        
+        $edicao = isset($_GET['edit']) && $_GET['edit'] == 1 ? 1 : 0 ;
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
         include_once('conexao.php');
 
         if ($conexao->connect_error){
@@ -35,23 +36,51 @@
                     } 
                   </script> ';
         }else{
-            $sql = 'INSERT INTO produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) VALUES (?,?,?,?,?,?)';
+            if ($edicao == 1){
+                $sql = "UPDATE produto SET imagem = ? , modelo = ? , id_categoria = ? , id_subcategoria = ? , desc_breve = ? , preco = ? WHERE produto.id_produto = ? ; ";
 
-            $stmt = $conexao->prepare($sql);
+                $stmt = $conexao->prepare($sql);
+
+                $stmt->bind_param("sssssdi",$_img,$_modelo,$_categoria,$_subcategoria,$_desc,$_valor,$id);
+
+                $stmt->execute();
+
+                if($stmt->affected_rows > 0){
+                    echo('<script>
+                    alert("produto atualizado com sucesso");
     
-            $stmt->bind_param("sssssd",$_img,$_modelo,$_categoria,$_subcategoria,$_desc,$_valor);
-    
-            $stmt->execute();
-            //dados inseridos no banco de dados
-            echo('<script>
-                    alert("produto cadastrado com sucesso");
-    
-                    redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/addprodutos.php");
+                    redirecionar("http://localhost/Total-esporte/TOTAL_ESPORTES/addprodutos.php");
     
                     function redirecionar(url){
                         window.location.href = url;
                     } 
-                </script>');
+                    </script>');                    
+                }else{
+                    echo('<script>
+                    alert("erro ao atualizar");
+                        </script>');
+                }
+
+            }else {
+                $sql = 'INSERT INTO produto (imagem,modelo,id_categoria,id_subcategoria,desc_breve,preco) VALUES (?,?,?,?,?,?)';
+
+                $stmt = $conexao->prepare($sql);
+        
+                $stmt->bind_param("sssssd",$_img,$_modelo,$_categoria,$_subcategoria,$_desc,$_valor);
+        
+                $stmt->execute();
+                //dados inseridos no banco de dados
+                echo('<script>
+                        alert("produto cadastrado com sucesso");
+        
+                        redirecionar("http://localhost/Total-esporte/TOTAL_ESPORTES/addprodutos.php");
+        
+                        function redirecionar(url){
+                            window.location.href = url;
+                        } 
+                    </script>');
+            }
+
         }
     } else{
         //caso algum campo não tenha sido preenchido

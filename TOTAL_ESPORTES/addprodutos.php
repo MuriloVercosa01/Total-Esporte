@@ -79,7 +79,7 @@
 </header>
 
     <main>
-        <form class="formulario" method="POST" action="Conexao/cadastrarProdutos.php">
+        <form class="formulario" method="POST" action='Conexao/cadastrarProdutos.php<?php  if(isset($id)){ echo ('?edit=1&id=' . $id . '');} ?>'  >
             <h1 id="titulo"><?php echo isset($id) ? "Editar Produto" : "Adicionar Produto";?></h1>
             <h2 id="subtitulo" >Preencha o formulário</h2>
             <div  class="form">

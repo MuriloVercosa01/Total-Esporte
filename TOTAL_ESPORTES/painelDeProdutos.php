@@ -168,7 +168,7 @@
                         <?php
                         include('Conexao/conexao.php');
 
-                        $sql = "SELECT produto.id_produto,categoria.nome_categoria ,sub_categoria.s_categoria,produto.modelo FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria;";
+                        $sql = "SELECT produto.id_produto,categoria.nome_categoria ,sub_categoria.s_categoria,produto.modelo FROM produto INNER JOIN sub_categoria ON produto.id_subcategoria = sub_categoria.id_sub_categoria INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria;";
 
                         $result = $conexao->query($sql);
                         
