@@ -5,148 +5,47 @@
     font-family: sans-serif;
 
 }
-
-.container{
-   max-width: 1080px;
-   margin: auto;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-header{
-    background-color: black;
+main{
+    height: 100vh;
     width: 100%;
-    padding: 15px;
-    padding-left: 80px;
- }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
- .logo,.btn-menu{
-    width: 25%;
-    
- }
-
- .logo img{
-    width: 200px;
-    cursor: pointer;
- }
-
- .menu{
-    width: 50%;
- }
-
- .menu nav a{
+}
+.container-perfil{
+    width: 80%;
+    height: 80vh;
+    background-color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+}
+.img-container{
+    width: 300px;
+    margin:50px;
+}
+.img-container h3{
+    text-align: center;
+}
+#img{
+    height: 300px;
+}
+.info-container{
+    background-color:whitesmoke;
+    width: 60%;
+    height: 70vh;
+    margin: auto;
+}
+.info-container button{
+    padding: 10px;
+    background-color: lawngreen;
+    font-weight: bold;
     color: white;
-    text-decoration: none;
-    padding-right: 70px;
-    font-size: 18px;
-    position: relative;
- }
-
- .menu nav a::after{
-   content: "  ";
-   width: 0px;
-   height: 4px;
-   background-image: linear-gradient(45deg, #ff2500, #ff7100 );
-   position: absolute;
-   top: 30px;
-   left: 0%;
-   transition: width 0.5s;
-
- }
-
- .menu nav a:hover::after{
-    width: 30px;
- }
-
-
-
- .btn-menu button{
-    width: 70px;
-    height: 50px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100 );
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 30px;
- }
-
- .btn-menu button i{
-    font-size: 20px;
-    color: white;
-
- }
-
-
-.btn-menu button  a{
-   font-size: 10px;
-   color: white;
-   padding-top: 10px;
-   text-decoration: none;
-
 }
-
-/* Formatação começa aqui*/
-
-/* Garantir que o layout do cabeçalho não afete o conteúdo abaixo */
-body {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
+.info-container button:hover{
+    background-color: green;
+    font-style: italic;
 }
-/* Estilos para a seção de perfil */
-.perfil-section {
-   margin-top: 40px;  /* Espaçamento entre o cabeçalho e a seção de perfil */
-   padding: 40px 20px;
-   background-color: #f9f9f9;
+.item {
+    margin:50px;
 }
-
-.perfil-container {
-   max-width: 600px;
-   margin: 0 auto;
-   background-color: #fff;
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-   text-align: center;
-   font-size: 2em;
-   margin-bottom: 20px;
-}
-
-.input-group {
-   margin-bottom: 15px;
-}
-
-label {
-   display: block;
-   font-weight: bold;
-   margin-bottom: 5px;
-}
-
-input {
-   width: 100%;
-   padding: 10px;
-   font-size: 1em;
-   border-radius: 5px;
-   border: 1px solid #ccc;
-}
-
-/* Classe CSS personalizada para o botão */
-.btn-salvar {
-   background-color: #4CAF50; /* Cor de fundo */
-   color: white;              /* Cor do texto */
-   padding: 10px 20px;        /* Espaçamento interno */
-   border: none;              /* Remover borda */
-   border-radius: 5px;        /* Bordas arredondadas */
-   cursor: pointer;          /* Cursor de mão ao passar o mouse */
-   font-size: 16px;           /* Tamanho da fonte */
-   transition: background-color 0.3s; /* Transição suave ao passar o mouse */
- }
- 
- .btn-salvar:hover {
-   background-color: #45a049; /* Cor do fundo ao passar o mouse */
- }
- 
