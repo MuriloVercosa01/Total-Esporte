@@ -1,9 +1,25 @@
 <?php
 
 session_start();
+include('Conexao/conexao.php');
+if(!isset($_SESSION['email'])){
+  echo "<script>alert('você não possui login');</script>";
+  $email = null;
+}else{
+  $email = $_SESSION['email'];
+}
 
 
-
+$sql = "SELECT * FROM cadastros where email = ? ;";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+if($result->num_rows > 0){
+  $row = $result->fetch_assoc();
+}else{
+  echo "<srcipt> alert('Usuário não encontrado'); </srcipt>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -72,14 +88,14 @@ session_start();
 <main>
     <div class="container-perfil" >
         <div class="img-container" >
-            <img id="img" src="img/placeholder.jpg">
-            <h3>Nome de Usuário</h3>
+            <img id="img" src="<?php echo isset($email) ? $row['img_perfil'] : "img/placeholder.jpg";?>">
+            <h3><?php echo isset($email) ? $row['nome'] : "Nome de Usuário";?></h3>
         </div>
         <div class="info-container">
-            <h4 class="item" >Nome de Usuário</h4>
+            <h4 class="item" ><?php echo isset($email) ? $row['nome'] : "Nome de Usuário";?></h4>
             <h4 class="item" >foto de perfil</h4>
-            <h4 class="item" >Email cadastrado</h4>
-            <h4 class="item" >Senha</h4>
+            <h4 class="item" ><?php echo isset($email) ? $row['email'] : "Email Cadastrado";  ?></h4>
+            <h4 class="item" ><?php echo isset($email) ? $row['senha'] : "Sua Senha";  ?></h4>
             <button class="item" >Editar</button>
         </div>
     </div>
@@ -140,7 +156,7 @@ session_start();
     &#169; 2024 Total Esporte
   </div>
 </footer>
-
+<srcipt src="JS/perfil.js" ></script>
 
 </body>
 </html>
