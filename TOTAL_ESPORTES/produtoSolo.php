@@ -53,7 +53,7 @@ $conexao->close();
             <div id="menu-perfil" class="conteudo-perfil">
                 <a href="compras.html">Carrinho de Compras</a>
                 <a href="painelDeProdutos.php">Gerenciar</a>
-                <a href="#">Conta</a>
+                <a href="perfil.php">Conta</a>
                 <a href="Sair">Sair da Conta</a>
             </div>
         </div>

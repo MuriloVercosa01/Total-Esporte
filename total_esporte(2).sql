@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Dez-2024 às 00:16
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.0.25
+-- Tempo de geração: 03/01/2025 às 14:47
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,20 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cadastros`
+-- Estrutura para tabela `cadastros`
 --
 
 CREATE TABLE `cadastros` (
   `id_cliente` int(11) NOT NULL,
   `email` varchar(150) DEFAULT NULL,
   `senha` varchar(10) DEFAULT NULL,
-  `nome` varchar(50) DEFAULT NULL
+  `nome` varchar(50) DEFAULT NULL,
+  `img_perfil` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cadastros`
+--
+
+INSERT INTO `cadastros` (`id_cliente`, `email`, `senha`, `nome`, `img_perfil`) VALUES
+(1, 'adm', '12345', 'adm', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cart`
+-- Estrutura para tabela `cart`
 --
 
 CREATE TABLE `cart` (
@@ -49,7 +57,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cart_itens`
+-- Estrutura para tabela `cart_itens`
 --
 
 CREATE TABLE `cart_itens` (
@@ -63,7 +71,7 @@ CREATE TABLE `cart_itens` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Estrutura para tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -72,7 +80,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `categoria`
+-- Despejando dados para a tabela `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
@@ -81,7 +89,7 @@ INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -96,7 +104,7 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `produto`
+-- Despejando dados para a tabela `produto`
 --
 
 INSERT INTO `produto` (`id_produto`, `modelo`, `preco`, `tamanho`, `imagem`, `desc_breve`, `id_categoria`, `id_subcategoria`) VALUES
@@ -118,7 +126,7 @@ INSERT INTO `produto` (`id_produto`, `modelo`, `preco`, `tamanho`, `imagem`, `de
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sub_categoria`
+-- Estrutura para tabela `sub_categoria`
 --
 
 CREATE TABLE `sub_categoria` (
@@ -128,7 +136,7 @@ CREATE TABLE `sub_categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `sub_categoria`
+-- Despejando dados para a tabela `sub_categoria`
 --
 
 INSERT INTO `sub_categoria` (`id_sub_categoria`, `s_categoria`, `id_categoria`) VALUES
@@ -141,20 +149,20 @@ INSERT INTO `sub_categoria` (`id_sub_categoria`, `s_categoria`, `id_categoria`) 
 --
 
 --
--- Índices para tabela `cadastros`
+-- Índices de tabela `cadastros`
 --
 ALTER TABLE `cadastros`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Índices para tabela `cart`
+-- Índices de tabela `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- Índices para tabela `cart_itens`
+-- Índices de tabela `cart_itens`
 --
 ALTER TABLE `cart_itens`
   ADD PRIMARY KEY (`id_cart_itens`),
@@ -163,13 +171,13 @@ ALTER TABLE `cart_itens`
   ADD KEY `id_produto` (`id_produto`);
 
 --
--- Índices para tabela `categoria`
+-- Índices de tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Índices para tabela `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`),
@@ -177,21 +185,21 @@ ALTER TABLE `produto`
   ADD KEY `id_subcategoria` (`id_subcategoria`);
 
 --
--- Índices para tabela `sub_categoria`
+-- Índices de tabela `sub_categoria`
 --
 ALTER TABLE `sub_categoria`
   ADD PRIMARY KEY (`id_sub_categoria`),
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `cadastros`
 --
 ALTER TABLE `cadastros`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `cart`
@@ -224,17 +232,17 @@ ALTER TABLE `sub_categoria`
   MODIFY `id_sub_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `cart`
+-- Restrições para tabelas `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cadastros` (`id_cliente`);
 
 --
--- Limitadores para a tabela `cart_itens`
+-- Restrições para tabelas `cart_itens`
 --
 ALTER TABLE `cart_itens`
   ADD CONSTRAINT `cart_itens_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cadastros` (`id_cliente`),
@@ -242,14 +250,14 @@ ALTER TABLE `cart_itens`
   ADD CONSTRAINT `cart_itens_ibfk_3` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
 
 --
--- Limitadores para a tabela `produto`
+-- Restrições para tabelas `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
   ADD CONSTRAINT `produto_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `sub_categoria` (`id_sub_categoria`);
 
 --
--- Limitadores para a tabela `sub_categoria`
+-- Restrições para tabelas `sub_categoria`
 --
 ALTER TABLE `sub_categoria`
   ADD CONSTRAINT `sub_categoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`);

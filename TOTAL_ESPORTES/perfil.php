@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +51,7 @@
               }
               ?>
               <!--<a href="painelDeProdutos.php">gerenciar</a>-->
-              <a href="#">Conta</a>
+              <a href="perfil.php">Conta</a>
               <a href="Conexao/logoff.php?logout=true" id="sair" >Sair</a>
           </div>
       </div>
