@@ -31,7 +31,7 @@ if($result->num_rows > 0){
     <link rel="stylesheet" href="Estilos/perfil.css">
     <link rel="stylesheet" href="Estilos/header.css">
     <script src="JS/index.js" defer></script>
-    <srcipt src="JS/perfil.js" ></script>
+    <!--<srcipt src="JS/perfil.js" ></script>-->
     <title>Tela de Perfil</title>
 </head>
 
@@ -95,19 +95,19 @@ if($result->num_rows > 0){
         <div class="info-container">
             <div class="item" >
             <h4  >Nome de usuário:</h4>
-            <h4  ><?php echo isset($email) ? $row['nome'] : "Nome de Usuário";?><button class="edit-btn" >Edt</button></h4>
+            <h4 class="text" ><?php echo isset($email) ? $row['nome'] : "Nome de Usuário";?></h4><button class="edit-btn" >Edt</button>
             </div>
             <div class="item">
               <h4 >foto de perfil</h4>
-              <h4 >upload do seu arquivo<button  >Edt</button></h4>
+              <h4 class="text" >upload do seu arquivo<button  >Edt</button></h4>
             </div>
             <div class="item">
             <h4 >Email:</h4>
-            <h4 ><?php echo isset($email) ? $row['email'] : "Email Cadastrado";  ?><button class="edit-btn" >Edt</button></h4>
+            <h4 class="text" ><?php echo isset($email) ? $row['email'] : "Email Cadastrado";  ?></h4><button class="edit-btn" >Edt</button>
             </div>
             <div class="item">
             <h4 >Senha:</h4>
-            <h4 ><?php echo isset($email) ? $row['senha'] : "Sua Senha";  ?><button class="edit-btn" >Edt</button></h4>
+            <h4 class="text" ><?php echo isset($email) ? $row['senha'] : "Sua Senha";  ?></h4><button class="edit-btn" >Edt</button>
             </div>
 
         </div>
@@ -169,7 +169,7 @@ if($result->num_rows > 0){
     &#169; 2024 Total Esporte
   </div>
 </footer>
-
+<script src="JS/perfil.js" defer></script>
 
 </body>
 </html>

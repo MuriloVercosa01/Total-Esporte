@@ -1,22 +1,47 @@
 
 console.log("Arquivo JS carregado com sucesso!");
 console.log("conexao com arquivo js");
-function editarPerfil(button){
+ async function editarPerfil(button){
 
     const container = button.closest('div');
-    const text = container.querySelectorAll('h4');
+    const coluna = container.className;
+    const texto = container.querySelector('.text');
+    const input = document.createElement('input');
+    const txtSalvo = document.createElement('h4');
 
     if(button.innerText == "Edt"){
         
-        const input = document.createElement('input');
-        input.innerText = text.innerText;
+        input.value = texto.innerText;
+        input.className = "text";
 
-        container.replacechild(input, h4);
+        container.replaceChild(input, texto);
 
         button.innerText = "Salvar";
-        console.log("o função editarPerfil foi executadaa!");
-    }else{
+        console.log("o if Edt funcionou com sucesso!");
+    }else if(button.innerText == "Salvar"){
+        txtSalvo.innerText = texto.value;
+        txtSalvo.className = "text";
+        container.replaceChild(txtSalvo , texto);
+        
+        button.innerText = "Edt"
+        console.log("o else if Salvar funcionou com sucesso!");
+        requi = `coluna=${encodeURIComponent(coluna)}&Dado=${texto.innerText}`;
+        try{
+            const response = await fetch('Conexao/perfilSalvar.php',{
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: requi
+            });
+            const data = await response.json;
 
+            if(data.sucess){
+                console.log("Edição salva com sucesso");
+            }else{
+                console.log("Erro ao salvar edição, dentro de try", data.message);
+            }
+        } catch(error){
+            console.error("erro ao salvar edição no banco de dados", error);
+        }
     }
 }
 
