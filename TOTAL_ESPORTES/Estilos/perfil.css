@@ -37,7 +37,9 @@ main{
     margin: auto;
 }
 .info-container button{
-    padding: 10px;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
     background-color: lawngreen;
     font-weight: bold;
     color: white;
@@ -45,7 +47,9 @@ main{
 .info-container button:hover{
     background-color: green;
     font-style: italic;
+    cursor:pointer;
 }
 .item {
-    margin:50px;
+    margin-top:50px;
+    margin-left:50px;
 }
