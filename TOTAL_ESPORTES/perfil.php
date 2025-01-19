@@ -99,7 +99,7 @@ if($result->num_rows > 0){
             </div>
             <div class="item">
               <h4 >foto de perfil</h4>
-              <h4 class="text" >upload do seu arquivo<button  >Edt</button></h4>
+              <h4 class="text" >upload do seu arquivo<button>Edt</button></h4>
             </div>
             <div class="item">
             <h4 >Email:</h4>
@@ -169,6 +169,11 @@ if($result->num_rows > 0){
     &#169; 2024 Total Esporte
   </div>
 </footer>
+
+<script>
+    var email_user = <?php echo json_encode(trim($email)); ?>
+</script>
+
 <script src="JS/perfil.js" defer></script>
 
 </body>
